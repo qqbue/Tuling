@@ -5,21 +5,23 @@ import android.os.*;
 import android.widget.*;
 import java.util.*;
 import org.json.*;
+import android.view.View.*;
+import android.view.*;
 
-public class MainActivity extends Activity implements HttpGetDataListener
+public class MainActivity extends Activity implements HttpGetDataListener,OnClickListener
 {
 
 	
 	List<ListData> list;
 	
 	HttpData httpData;
-	TextView tv;
+	//TextView tv;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-		tv=(TextView) findViewById(R.id.mainTextView1);
+		//tv=(TextView) findViewById(R.id.mainTextView1);
 		
 		httpData=(HttpData) new HttpData(Config.serverUrl+"天气",this).execute();
 		
@@ -29,7 +31,7 @@ public class MainActivity extends Activity implements HttpGetDataListener
 	public void getUrlData(String data)
 	{
 		//System.out.println(data);
-		tv.setText(data);
+		//tv.setText(data);
 		parse(data);
 		// TODO: Implement this method
 	}
@@ -59,4 +61,14 @@ public class MainActivity extends Activity implements HttpGetDataListener
 		{}
 
 		
-	}}
+	}
+
+	@Override
+	public void onClick(View p1)
+	{
+		// TODO: Implement this method
+	}
+
+	
+	
+	}
